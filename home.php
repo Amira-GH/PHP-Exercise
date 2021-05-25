@@ -259,18 +259,28 @@ h3{
 </div>
 
 <div class="loginfield">
- <form action="" method="post">
+ <form action="safe.php" method="post">
 
  <label for="Username">Username:</label>
- <input type="text" id="Username"/><br/><br/>
+ <input type="text" id="Username" name="User_name"/><br/><br/>
 
 
  <label for="Password">Password:</label>
- <input type="password" id="password"/><br/><br/>
+ <input type="password" id="password" name="password"/><br/><br/>
 
  <button type="Submit" class="login" name="Login"> Login</button>
 
  </form>
+
+
+<?php
+
+
+
+
+?>
+
+
 </div>
 
 
