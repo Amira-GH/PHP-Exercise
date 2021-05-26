@@ -53,7 +53,7 @@ Rules:<br>
   1. All the fields are required. </br>
   2. When you choose monthly or yearly the calculation must adjust accordingly </br>
   3. There are some salary ranges that will affect the percentage of the tax. Below is the list of yearly salaries and their taxes:
-      - salary < 10,000$: 0% tax
+      - salary < 10,000$: 0% tax 
       - 10,000$ < salary < 25,000$: 11% Tax
       - 25,000$ < salary < 50,000$: 30% tax
       - salary > 50,000$: 45% tax </br></br>
