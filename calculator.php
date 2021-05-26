@@ -56,8 +56,8 @@ h3{
             }
             else{
                 $tax = round(($salary * 0));
-                $tax = $tax/12;
-                $ssf=0;
+                $tax_yearly = $tax/12;
+                $ssf_yearly=0;
             }
         }
         elseif($salary<25000 && $salary>10000){
@@ -67,8 +67,8 @@ h3{
             }
             else{
                 $tax = round(($salary * 11) / 100, 2);
-                $tax = $tax/12;
-                $ssf = round(($salary * 4 ) /100 ,2);
+                $tax_yearly = $tax/12;
+                $ssf_yearly = round(($salary * 4 ) /100 ,2);
             }
         }
         elseif($salary<50000 && $salary>25000){
@@ -78,8 +78,8 @@ h3{
             }
             else{
                 $tax = round(($salary * 30) / 100, 2);
-                $tax = $tax/12;
-                $ssf = round(($salary * 4 ) /100 ,2);
+                $tax_yearly = $tax/12;
+                $ssf_yearly = round(($salary * 4 ) /100 ,2);
             }
         }
         else{
@@ -89,8 +89,8 @@ h3{
             }
             else{
                 $tax = round(($salary * 45) / 100, 2);
-                $tax = $tax/12;
-                 $ssf = round(($salary * 4 ) /100 ,2);
+                $tax_yearly = $tax/12;
+                 $ssf_yearly = round(($salary * 4 ) /100 ,2);
             }
         }
         $finalAmount = round($salary - $tax, 2);
@@ -148,13 +148,13 @@ h3{
   </tr>
   <tr>
     <td>Tax amount</td>
-    <td></td>
-    <td>  <?=$tax?></td>
+    <td> <?=$tax?></td>
+    <td> <?=$tax_yearly?></td>
   </tr>
   <tr>
     <td>Social security fee</td>
-    <td></td>
-    <td> <?=$ssf ?> </td>
+    <td><?=$ssf ?></td>
+    <td> <?=$ssf_yearly ?> </td>
   </tr>
   <tr>
     <td>Salary after tax</td>
