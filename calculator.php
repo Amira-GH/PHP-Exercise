@@ -50,20 +50,48 @@ h3{
             $ssf=0;
         }
         if($salary<10000){
-            $tax = round(($salary * 0));
-            $ssf=0;
+            if($_POST['option'] === 'monthly'){
+                $tax = round(($salary * 0));
+                $ssf=0;
+            }
+            else{
+                $tax = round(($salary * 0));
+                $tax = $tax/12;
+                $ssf=0;
+            }
         }
         elseif($salary<25000 && $salary>10000){
+            if($_POST['option'] === 'monthly'){
             $tax = round(($salary * 11) / 100, 2);
             $ssf = round(($salary * 4 ) /100 ,2);
+            }
+            else{
+                $tax = round(($salary * 11) / 100, 2);
+                $tax = $tax/12;
+                $ssf = round(($salary * 4 ) /100 ,2);
+            }
         }
         elseif($salary<50000 && $salary>25000){
+            if($_POST['option'] === 'monthly'){
             $tax = round(($salary * 30) / 100, 2);
             $ssf = round(($salary * 4 ) /100 ,2);
+            }
+            else{
+                $tax = round(($salary * 30) / 100, 2);
+                $tax = $tax/12;
+                $ssf = round(($salary * 4 ) /100 ,2);
+            }
         }
-        else{$tax = round(($salary * 45) / 100, 2);
+        else{
+            if($_POST['option'] === 'monthly'){
+            $tax = round(($salary * 45) / 100, 2);
             $ssf = round(($salary * 4 ) /100 ,2);
-
+            }
+            else{
+                $tax = round(($salary * 45) / 100, 2);
+                $tax = $tax/12;
+                 $ssf = round(($salary * 4 ) /100 ,2);
+            }
         }
         $finalAmount = round($salary - $tax, 2);
     ?>
@@ -87,9 +115,10 @@ h3{
             <label>Tax free</label>
             <input type="checkbox"><br>
             <br><label>Options :</label><br><br>
-              <input type="radio" id="yearly" name="option" value="yearly" required>
-                 <label for="yearly">yearly</label><br>
 
+
+                <input type="radio" id="yearly" name="option" value="yearly" required>
+                <label for="yearly">yearly</label><br>
 
 
                 <input type="radio" id="monthly" name="option" value="monthly" required>
@@ -114,23 +143,23 @@ h3{
   </tr>
   <tr>
     <td>Total salary</td>
-    <td><?=$salary ?></td>
-    <td> </td>
+    <td></td>
+    <td><?=$salary ?> </td>
   </tr>
   <tr>
     <td>Tax amount</td>
-    <td> <?=$tax?></td>
-    <td> </td>
+    <td></td>
+    <td>  <?=$tax?></td>
   </tr>
   <tr>
     <td>Social security fee</td>
-    <td><?=$ssf ?> </td>
-    <td> </td>
+    <td></td>
+    <td> <?=$ssf ?> </td>
   </tr>
   <tr>
     <td>Salary after tax</td>
-    <td><?=$finalAmount ?>  </td>
     <td> </td>
+    <td> <?=$finalAmount ?> </td>
   </tr>
 
 </body>
